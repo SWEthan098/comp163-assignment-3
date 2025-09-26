@@ -62,3 +62,41 @@ if pick_course in course_options:
         print(f"English:\n Credit hours: 3\nEstimated Social Point Loss: -5\nEstimated Study Hours: +4\nCurrent Social Points: {social_points}\nCurrent Study Hours: {study_hours}")
 elif pick_course not in course_options:
     print(f"Pick a course in the options to study.")
+#Checks your GPA and stress level to see how well you'd do in a class and then does the calculations to update the variables
+pick_course_take = input("Pick your course you would like to take!: Programming, Math, English, History\n")
+#Handles the invalid option
+if pick_course_take is not None:
+    if pick_course_take not in course_options:
+        print("Invalid course choice!")
+    else:
+        print(f"You chose {pick_course_take} — let's see how it affects your GPA!")
+else:
+    print("No course chosen yet!")
+if current_gpa <= 3.0 or stress_level >= 60:
+    if pick_course_take == "Math":
+        current_gpa -= 0.2
+        print(f"This will negatively effect your GPA because you are already stressed and I believe you won't do well.\nEstimated GPA:{current_gpa}")
+    else:
+        current_gpa += 0.2
+        print(f"This will positively effect your GPA because you aren't stressed and I believe you will do well.\nEstimated GPA: {current_gpa}")
+if current_gpa <= 3.0 or stress_level >= 60:
+    if pick_course_take == "Programming":
+        current_gpa -= 0.2
+        print(f"This will negatively effect your GPA because you are already stressed and I believe you won't do well.\nEstimated GPA:{current_gpa}")
+    else:
+        current_gpa += 0.2
+        print(f"This will positively effect your GPA because you aren't stressed and I believe you will do well.\nEstimated GPA: {current_gpa}")
+if current_gpa <= 2.5 or stress_level >= 80:
+    if pick_course_take == "History":
+        current_gpa -= 0.2
+        print(f"This will negatively effect your GPA because you are already stressed and I believe you won't do well.\nEstimated GPA:{current_gpa}")
+    else:
+        current_gpa += 0.2
+        print(f"This will positively effect your GPA because you aren't stressed and I believe you will do well.\nEstimated GPA: {current_gpa}")
+if current_gpa <= 2.0 or stress_level >= 90:
+    if pick_course_take == "English":
+        current_gpa += 0.2
+        print(f"This class is a easy GPA boost and I believe you will do well.\nEstimated GPA:{current_gpa}")
+    else:
+        current_gpa += 0.1
+        print(f"You should still do fine in English.\nEstimated GPA: {current_gpa}")
