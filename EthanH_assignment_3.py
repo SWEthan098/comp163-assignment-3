@@ -100,3 +100,7 @@ if current_gpa <= 2.0 or stress_level >= 90:
     else:
         current_gpa += 0.1
         print(f"You should still do fine in English.\nEstimated GPA: {current_gpa}")
+
+print()
+#Displays final stats for the user to see
+print(f"Final Stats!\nStudent Name: {student_name}\nEstimated GPA: {current_gpa}\nEstimated Stress Level: {stress_level}\nEstimated Social Points: {social_points}\nEstimated Study Hours: {study_hours}")
